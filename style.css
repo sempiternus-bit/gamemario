@@ -45,6 +45,14 @@ body{
 
 }
 
+.nuvem{
+
+	position: absolute;
+	width: 40%;
+	animation: nuvem-animation 20s infinite linear ;
+
+}
+
 @keyframes tubo-animation{
 
 	from{
@@ -91,6 +99,22 @@ body{
 
 
 		bottom: 0;
+
+	}
+
+}
+
+@keyframes nuvem-animation{
+
+	from{
+
+		right: -30px;
+
+	}
+
+	to{
+
+		right: 100%;
 
 	}
 
