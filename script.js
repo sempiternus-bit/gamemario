@@ -1,5 +1,6 @@
 const mario = document.querySelector('.mario')
 const tubo = document.querySelector('.tubo')
+const nuvem = document.querySelector('.nuvem')
 
 const jump = () => {
 
@@ -16,6 +17,7 @@ const jump = () => {
 const loop = setInterval(() => {
 
 	const tubopos = tubo.offsetLeft
+	let nuvempos = nuvem.offsetLeft
 	const mariopos = +window.getComputedStyle(mario).bottom.replace('px', '')
 
 	if(tubopos <= 56 && tubopos > 0 && mariopos < 80){
@@ -26,13 +28,14 @@ const loop = setInterval(() => {
 		mario.style.animation = 'none'
 		mario.style.bottom = `${mariopos}px`
 
+		nuvem.style.left = `${nuvempos}px`
+
 		mario.src = 'gameover.png'
 		mario.style.width = '6%'
-		mario.style.margin = '0px'
 
 		clearInterval(loop)
 
-	} 
+	}
 
 }, 10)
 
