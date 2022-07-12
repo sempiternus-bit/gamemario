@@ -51,7 +51,7 @@ setInterval(() => {
 
 	sec += 1
 
-	if(sec >= 20 && sec < 40){
+	if(sec >= 20 ){
 
 		tubo.style.animation = 'tubo-animation 1s infinite linear'
 
