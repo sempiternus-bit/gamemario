@@ -57,7 +57,7 @@ setInterval(() => {
 
 	}else if(sec > 40){
 
-		tubo.style.animation = 'tubo-animation 700ms infinite linear'
+		tubo.style.animation = 'tubo-animation 800ms infinite linear'
 
 	}
 
