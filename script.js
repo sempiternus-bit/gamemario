@@ -1,6 +1,9 @@
 const mario = document.querySelector('.mario')
 const tubo = document.querySelector('.tubo')
 const nuvem = document.querySelector('.nuvem')
+let sec = 0
+
+
 
 const jump = () => {
 
@@ -11,6 +14,7 @@ const jump = () => {
 		mario.classList.remove('jump')		
 
 	}, 500)
+
 
 }
 
@@ -40,5 +44,22 @@ const loop = setInterval(() => {
 }, 10)
 
 
+
 document.addEventListener('keydown', jump)
 document.addEventListener('touchstart', jump)
+setInterval(() => {
+
+	sec += 1
+
+	if(sec >= 20 && sec < 40){
+
+		tubo.style.animation = 'tubo-animation 1s infinite linear'
+
+	}else if(sec > 40){
+
+		tubo.style.animation = 'tubo-animation 700ms infinite linear'
+
+	}
+
+}, 1000)
+
