@@ -49,13 +49,27 @@ document.addEventListener('keydown', jump)
 document.addEventListener('touchstart', jump)
 setInterval(() => {
 
-	sec += 1
+	if(sec < 41){
+                
+                sec += 1 
+        }
 
-	if(sec >= 20 ){
+	if(sec == 20 ){
 
 		tubo.style.animation = 'tubo-animation 1s infinite linear'
 
 	}
 
 }, 1000)
+
+setInterval(() => {
+
+	if(sec == 40 ){
+
+		tubo.style.animation = 'tubo-animation 700ms infinite linear'
+
+	}
+
+}, 700)
+
 
