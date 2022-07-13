@@ -49,16 +49,11 @@ document.addEventListener('touchstart', jump)
 
 setInterval(() => {
 
-	const tubopos = tubo.offsetLeft
         sec += 1
 
 	if(sec >= 20 && sec <= 40){
 
 		tubo.style.animation = 'tubo-animation 1s infinite linear'
-
-	}else if(sec > 40 && tubopos == 0){
-
-		tubo.style.animation = 'tubo-animation 2s infinite linear'
 
 	}
 
