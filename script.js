@@ -1,7 +1,6 @@
 const mario = document.querySelector('.mario')
 const tubo = document.querySelector('.tubo')
 const nuvem = document.querySelector('.nuvem')
-tubopos = tubo.offsetLeft
 let sec = 0
 
 
@@ -20,7 +19,7 @@ const jump = () => {
 }
 
 const loop = setInterval(() => {
-
+        const tubopos = tubo.offsetLeft
 	let nuvempos = nuvem.offsetLeft
 	const mariopos = +window.getComputedStyle(mario).bottom.replace('px', '')
 
@@ -50,13 +49,14 @@ document.addEventListener('touchstart', jump)
 
 setInterval(() => {
 
-	sec += 1
+	const tubopos = tubo.offsetLeft
+        sec += 1
 
 	if(sec >= 20 && sec <= 40){
 
 		tubo.style.animation = 'tubo-animation 1s infinite linear'
 
-	}else if(sec > 40 && tubopos == 100%){
+	}else if(sec > 40 && tubopos == 0){
 
 		tubo.style.animation = 'tubo-animation 700ms infinite linear'
 
