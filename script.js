@@ -1,11 +1,15 @@
 const mario = document.querySelector('.mario')
 const tubo = document.querySelector('.tubo')
 const nuvem = document.querySelector('.nuvem')
+const som = new Audio()
+som.src = 'jump.mp3'
 let sec = 0
 
 
 
 const jump = () => {
+
+	som.play()
 
 	mario.classList.add('jump')
 
@@ -19,11 +23,13 @@ const jump = () => {
 }
 
 const loop = setInterval(() => {
-        const tubopos = tubo.offsetLeft
+
+	const tubopos = tubo.offsetLeft
 	let nuvempos = nuvem.offsetLeft
 	const mariopos = +window.getComputedStyle(mario).bottom.replace('px', '')
 
 	if(tubopos <= 56 && tubopos > 0 && mariopos < 80){
+
 
 		tubo.style.animation = 'none'
 		tubo.style.left = `${tubopos}px`
@@ -36,11 +42,18 @@ const loop = setInterval(() => {
 		mario.src = 'gameover.png'
 		mario.style.width = '6%'
 
+		deletsound()
 		clearInterval(loop)
 
 	}
 
 }, 10)
+
+function deletsound(){
+
+	som.src = ''
+
+}
 
 
 
